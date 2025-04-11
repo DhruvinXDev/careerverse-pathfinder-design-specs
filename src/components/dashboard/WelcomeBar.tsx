@@ -16,14 +16,10 @@ export function WelcomeBar({
   className,
 }: WelcomeBarProps) {
   return (
-    <Card className={cn("overflow-hidden shadow-md", className)}>
+    <Card className={cn("overflow-hidden", className)}>
       <CardContent className="p-0">
-        <div className="bg-gradient-to-r from-primary to-accent text-white p-6 relative overflow-hidden">
-          {/* Decorative elements */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-bl-full"></div>
-          <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-white opacity-10 rounded-full"></div>
-          
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 relative">
+        <div className="bg-gradient-to-r from-career-600 to-career-800 text-white p-6">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <h1 className="text-2xl font-bold">Welcome, {userName}!</h1>
               <p className="text-white/80 mt-1">
@@ -31,20 +27,20 @@ export function WelcomeBar({
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <Button variant="secondary" size="sm" className="gap-2 button-3d">
+              <Button variant="secondary" size="sm" className="gap-2">
                 <TrendingUp className="h-4 w-4" />
                 <span>Career Path</span>
               </Button>
-              <Button variant="secondary" size="sm" className="gap-2 button-3d">
+              <Button variant="secondary" size="sm" className="gap-2">
                 <User className="h-4 w-4" />
                 <span>Edit Profile</span>
               </Button>
             </div>
           </div>
         </div>
-        <div className="p-4 md:p-6 grid grid-cols-1 md:grid-cols-3 gap-6 bg-background">
-          <div className="flex items-center gap-4 group transition-all duration-300 p-3 rounded-lg hover:bg-secondary/50">
-            <div className="rounded-full bg-career-100 p-3 transition-all duration-300 group-hover:scale-110 group-hover:bg-career-200">
+        <div className="p-4 md:p-6 grid grid-cols-1 md:grid-cols-3 gap-4 bg-background">
+          <div className="flex items-center gap-4">
+            <div className="rounded-full bg-career-100 p-2">
               <User className="h-5 w-5 text-career-600" />
             </div>
             <div>
@@ -52,7 +48,7 @@ export function WelcomeBar({
               <div className="flex items-center gap-2 mt-1">
                 <div className="h-2 w-24 bg-muted rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-gradient-to-r from-career-400 to-career-600 rounded-full transition-all duration-700 ease-out"
+                    className="h-full bg-career-500 rounded-full"
                     style={{ width: `${profileCompletionPercent}%` }}
                   ></div>
                 </div>
@@ -60,8 +56,8 @@ export function WelcomeBar({
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-4 group transition-all duration-300 p-3 rounded-lg hover:bg-secondary/50">
-            <div className="rounded-full bg-career-100 p-3 transition-all duration-300 group-hover:scale-110 group-hover:bg-career-200">
+          <div className="flex items-center gap-4">
+            <div className="rounded-full bg-career-100 p-2">
               <BookOpen className="h-5 w-5 text-career-600" />
             </div>
             <div>
@@ -69,8 +65,8 @@ export function WelcomeBar({
               <div className="text-sm font-medium">3 courses in progress</div>
             </div>
           </div>
-          <div className="flex items-center gap-4 group transition-all duration-300 p-3 rounded-lg hover:bg-secondary/50">
-            <div className="rounded-full bg-career-100 p-3 transition-all duration-300 group-hover:scale-110 group-hover:bg-career-200">
+          <div className="flex items-center gap-4">
+            <div className="rounded-full bg-career-100 p-2">
               <Clock className="h-5 w-5 text-career-600" />
             </div>
             <div>

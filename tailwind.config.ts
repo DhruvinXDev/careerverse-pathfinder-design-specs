@@ -64,17 +64,17 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				career: {
-					50: '#f3f0ff',
-					100: '#ede5ff',
-					200: '#dcd1ff',
-					300: '#c4afff',
-					400: '#ab83ff',
-					500: '#9b65ff',
-					600: '#8b45fe',
-					700: '#7c34e2',
-					800: '#682bbe',
-					900: '#56289b',
-					950: '#341769',
+					50: '#f5f3ff',
+					100: '#ede9fe',
+					200: '#ddd6fe',
+					300: '#c4b5fd',
+					400: '#a78bfa',
+					500: '#8b5cf6',
+					600: '#7c3aed',
+					700: '#6d28d9',
+					800: '#5b21b6',
+					900: '#4c1d95',
+					950: '#2e1065',
 				}
 			},
 			borderRadius: {
@@ -160,47 +160,7 @@ export default {
 					'50%': {
 						boxShadow: '0 0 20px rgba(139, 92, 246, 0.8)'
 					}
-				},
-        'shimmer': {
-          '0%': {
-            backgroundPosition: '-500px 0'
-          },
-          '100%': {
-            backgroundPosition: '500px 0'
-          }
-        },
-        'pulse-ring': {
-          '0%': {
-            transform: 'scale(0.9)',
-            opacity: '0.8'
-          },
-          '50%': {
-            transform: 'scale(1)',
-            opacity: '0.5'
-          },
-          '100%': {
-            transform: 'scale(0.9)',
-            opacity: '0.8'
-          }
-        },
-        'bounce-gentle': {
-          '0%, 100%': {
-            transform: 'translateY(0)',
-            animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
-          },
-          '50%': {
-            transform: 'translateY(-10px)',
-            animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
-          }
-        },
-        'spin-slow': {
-          '0%': {
-            transform: 'rotate(0deg)'
-          },
-          '100%': {
-            transform: 'rotate(360deg)'
-          }
-        }
+				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -211,26 +171,8 @@ export default {
 				'slide-in': 'slide-in 0.3s ease-out',
 				'pulse-gentle': 'pulse-gentle 3s ease-in-out infinite',
 				'float': 'float 3s ease-in-out infinite',
-				'glow': 'glow 2s ease-in-out infinite',
-        'shimmer': 'shimmer 2s linear infinite',
-        'pulse-ring': 'pulse-ring 1.5s ease-out infinite',
-        'bounce-gentle': 'bounce-gentle 3s infinite',
-        'spin-slow': 'spin-slow 6s linear infinite'
-			},
-      boxShadow: {
-        'inner-sm': 'inset 0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-        'inner-md': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.1)',
-        'inner-lg': 'inset 0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-        'highlight': '0 0 0 3px rgba(139, 92, 246, 0.3)',
-        'glow-sm': '0 0 10px rgba(139, 92, 246, 0.3)',
-        'glow-md': '0 0 15px rgba(139, 92, 246, 0.4)',
-        'glow-lg': '0 0 20px rgba(139, 92, 246, 0.5)',
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'shimmer': 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 100%)',
-      }
+				'glow': 'glow 2s ease-in-out infinite'
+			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
