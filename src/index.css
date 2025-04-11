@@ -14,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 201 100% 36%;
+    --primary: 222 83% 55%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96%;
@@ -23,7 +23,7 @@
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 199 89% 48%;
+    --accent: 262 83% 58%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84% 60%;
@@ -37,51 +37,51 @@
 
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 222 47% 11%;
-    --sidebar-primary: 201 100% 36%;
+    --sidebar-primary: 222 83% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 5% 96%;
     --sidebar-accent-foreground: 240 6% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-ring: 222 83% 55%;
   }
 
   .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
 
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
 
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
 
     --primary: 210 40% 98%;
     --primary-foreground: 222 47% 11%;
 
-    --secondary: 217 33% 18%;
+    --secondary: 222 47% 11%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217 33% 18%;
+    --muted: 223 47% 11%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 199 89% 48%;
+    --accent: 262 83% 58%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 33% 18%;
-    --input: 217 33% 18%;
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
     --ring: 213 27% 84%;
     
-    --sidebar-background: 240 6% 10%;
-    --sidebar-foreground: 240 5% 96%;
-    --sidebar-primary: 199 89% 48%;
+    --sidebar-background: 224 71% 4%;
+    --sidebar-foreground: 213 31% 91%;
+    --sidebar-primary: 262 83% 58%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 4% 16%;
-    --sidebar-accent-foreground: 240 5% 96%;
-    --sidebar-border: 240 4% 16%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-accent: 223 47% 11%;
+    --sidebar-accent-foreground: 213 31% 91%;
+    --sidebar-border: 223 47% 11%;
+    --sidebar-ring: 262 83% 58%;
   }
 }
 
@@ -97,34 +97,80 @@
 
 @layer components {
   .gradient-heading {
-    @apply bg-gradient-to-r from-career-600 to-career-800 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-accent/30;
   }
   
   .nav-link {
-    @apply relative px-2 py-1 text-foreground/80 hover:text-foreground transition-colors duration-200 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-career-500 after:transition-all after:duration-300 hover:after:w-full;
+    @apply relative px-2 py-1 text-foreground/80 hover:text-foreground transition-colors duration-200 
+           after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 
+           after:bg-accent after:transition-all after:duration-300 hover:after:w-full;
   }
   
   .nav-link.active {
-    @apply text-career-600 after:w-full;
+    @apply text-accent after:w-full;
   }
   
+  /* Advanced hover effects for cards */
+  .enhanced-card {
+    @apply relative overflow-hidden rounded-lg border bg-card transition-all duration-300 ease-in-out
+           shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-accent/30
+           before:absolute before:inset-0 before:z-0 before:bg-gradient-to-br before:from-primary/5 before:to-accent/5
+           before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100;
+  }
+  
+  /* Button hover effects */
+  .button-glow {
+    @apply relative overflow-hidden transition-all duration-300 
+           after:absolute after:inset-0 after:z-[-1] after:rounded-md after:bg-gradient-to-r after:from-primary/30 after:to-accent/30 
+           after:opacity-0 after:blur-xl after:transition-opacity after:duration-300 hover:after:opacity-100;
+  }
+  
+  /* Progress ring styles */
   .progress-ring {
     @apply relative flex items-center justify-center;
   }
   
   .progress-ring-circle {
-    @apply stroke-career-100 fill-none;
+    @apply stroke-primary/10 fill-none;
   }
   
   .progress-ring-progress {
-    @apply stroke-career-500 fill-none transition-all duration-300 ease-out origin-center -rotate-90;
+    @apply stroke-accent fill-none transition-all duration-500 ease-out origin-center -rotate-90;
   }
   
   .progress-ring-text {
     @apply absolute text-center text-xs font-medium;
+  }
+  
+  /* Animated gradients for special elements */
+  .animated-gradient-border {
+    @apply relative rounded-lg p-0.5 bg-gradient-to-br from-primary to-accent;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+  }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Smooth hover transitions for nav items */
+  .nav-item-hover {
+    @apply relative px-3 py-2 rounded-md transition-all duration-200
+           hover:bg-accent/10 hover:text-accent;
+  }
+  
+  /* Cool effect for stat cards */
+  .stat-card {
+    @apply relative overflow-hidden rounded-lg border bg-card transition-all duration-300
+           hover:shadow-lg hover:-translate-y-1 hover:border-accent/40
+           after:absolute after:bottom-0 after:left-0 after:h-1 after:w-0 
+           after:bg-gradient-to-r after:from-primary after:to-accent
+           after:transition-all after:duration-300 hover:after:w-full;
   }
 }

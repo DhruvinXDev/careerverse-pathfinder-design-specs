@@ -153,20 +153,32 @@ export default function Dashboard() {
   return (
     <DashboardLayout userName="Alex Taylor" userType="student">
       <div className="space-y-6">
-        <WelcomeBar userName="Alex" profileCompletionPercent={75} />
-        
-        <StatsCards />
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="md:col-span-2">
-            <UpcomingEvents events={upcomingEvents} />
-          </div>
-          <div className="md:col-span-1">
-            <CareerProgress skills={skillsProgress} overallProgress={68} />
+        <div className="animated-gradient-border">
+          <div className="bg-background rounded-lg">
+            <WelcomeBar userName="Alex" profileCompletionPercent={75} />
           </div>
         </div>
         
-        <RecommendedResources resources={recommendedResources} />
+        <div>
+          <StatsCards />
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="md:col-span-2">
+            <div className="enhanced-card h-full">
+              <UpcomingEvents events={upcomingEvents} />
+            </div>
+          </div>
+          <div className="md:col-span-1">
+            <div className="enhanced-card h-full">
+              <CareerProgress skills={skillsProgress} overallProgress={68} />
+            </div>
+          </div>
+        </div>
+        
+        <div className="enhanced-card">
+          <RecommendedResources resources={recommendedResources} />
+        </div>
       </div>
     </DashboardLayout>
   );
