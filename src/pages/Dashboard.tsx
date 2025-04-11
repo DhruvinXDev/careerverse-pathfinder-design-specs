@@ -5,9 +5,10 @@ import { StatsCards } from "@/components/dashboard/StatsCards";
 import { UpcomingEvents } from "@/components/dashboard/UpcomingEvents";
 import { RecommendedResources } from "@/components/dashboard/RecommendedResources";
 import { CareerProgress } from "@/components/dashboard/CareerProgress";
+import { Event, Resource, Skill } from "@/types";
 
 // Mock data for events
-const upcomingEvents = [
+const upcomingEvents: Event[] = [
   {
     id: "1",
     title: "Advanced JavaScript for Web Developers",
@@ -38,7 +39,7 @@ const upcomingEvents = [
 ];
 
 // Mock data for resources
-const recommendedResources = [
+const recommendedResources: Resource[] = [
   {
     id: "1",
     title: "Modern JavaScript: From Fundamentals to Advanced",
@@ -91,7 +92,7 @@ const recommendedResources = [
 ];
 
 // Mock data for skills progress
-const skillsProgress = [
+const skillsProgress: Skill[] = [
   {
     id: "1",
     name: "JavaScript",
