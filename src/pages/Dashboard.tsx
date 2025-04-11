@@ -152,31 +152,25 @@ const skillsProgress: Skill[] = [
 export default function Dashboard() {
   return (
     <DashboardLayout userName="Alex Taylor" userType="student">
-      <div className="space-y-6">
-        <div className="animated-gradient-border">
-          <div className="bg-background rounded-lg">
-            <WelcomeBar userName="Alex" profileCompletionPercent={75} />
-          </div>
-        </div>
+      <div className="space-y-8">
+        <WelcomeBar userName="Alex" profileCompletionPercent={75} />
         
-        <div>
+        <div className="animate-fade-in">
           <StatsCards />
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
-            <div className="enhanced-card h-full">
+            <div className="shadow-md rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg border border-border">
               <UpcomingEvents events={upcomingEvents} />
             </div>
           </div>
           <div className="md:col-span-1">
-            <div className="enhanced-card h-full">
-              <CareerProgress skills={skillsProgress} overallProgress={68} />
-            </div>
+            <CareerProgress skills={skillsProgress} overallProgress={68} />
           </div>
         </div>
         
-        <div className="enhanced-card">
+        <div className="shadow-md rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg border border-border">
           <RecommendedResources resources={recommendedResources} />
         </div>
       </div>
