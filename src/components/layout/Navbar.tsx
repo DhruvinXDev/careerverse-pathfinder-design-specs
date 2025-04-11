@@ -26,13 +26,8 @@ export function Navbar({ userName, userAvatar, userType = "student" }: NavbarPro
 
   const NavLinks = () => (
     <div className="flex items-center gap-6">
-      <Link to="/" className="nav-link">Home</Link>
       {userType === "admin" && <Link to="/admin" className="nav-link">Admin</Link>}
       {userType === "mentor" && <Link to="/mentor" className="nav-link">Mentor</Link>}
-      <Link to="/explore" className="nav-link">Explore</Link>
-      <Link to="/learn" className="nav-link">Learn</Link>
-      <Link to="/network" className="nav-link">Network</Link>
-      <Link to="/resources" className="nav-link">Resources</Link>
     </div>
   );
 
