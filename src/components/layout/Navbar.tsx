@@ -8,7 +8,6 @@ import {
   Search,
   User,
   X,
-  ChevronRight
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
